@@ -9,8 +9,12 @@ export const TodoFilter: React.FC<Props> = ({
   setQuery,
   query,
 }) => {
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+  };
+
   return (
-    <form className="field has-addons">
+    <form className="field has-addons" onSubmit={handleSubmit}>
       <p className="control">
         <span className="select">
           <select
