@@ -6,7 +6,7 @@ import { Todo } from '../../types/Todo';
 
 type Props = {
   todo: Todo;
-  onTodoCloseClick: (todo: Todo) => void;
+  onTodoCloseClick: () => void;
 };
 
 export const TodoModal: React.FC<Props> = ({ todo, onTodoCloseClick }) => {
@@ -35,12 +35,11 @@ export const TodoModal: React.FC<Props> = ({ todo, onTodoCloseClick }) => {
               {`Todo #${todo.id}`}
             </div>
 
-            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
             <button
               type="button"
               className="delete"
               data-cy="modal-close"
-              onClick={() => onTodoCloseClick(todo)}
+              onClick={() => onTodoCloseClick()}
             />
           </header>
 
